@@ -105,6 +105,7 @@ const serverlessConfiguration: AWS = {
                       "dynamodb:PutItem",
                       "dynamodb:DeleteItem",
                       "dynamodb:UpdateItem",
+                      "dynamodb:Scan"
                     ],
                     Resource: {
                       "Fn::GetAtt": ["BillboardTables", "Arn"],
