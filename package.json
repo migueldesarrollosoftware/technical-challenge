@@ -6,14 +6,21 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "lint": "eslint . --ext .ts",
-    "format": "prettier --write ."
+    "format": "prettier --write .",
+    "dev": "yarn sls offline"
   },
   "engines": {
     "node": ">=14.15.0"
   },
   "dependencies": {
     "@middy/core": "^3.4.0",
-    "@middy/http-json-body-parser": "^3.4.0"
+    "@middy/http-cors": "^4.4.2",
+    "@middy/http-json-body-parser": "^3.4.0",
+    "@middy/validator": "^4.4.2",
+    "axios": "^1.4.0",
+    "dotenv": "^16.0.3",
+    "middy": "^0.36.0",
+    "uuid": "^9.0.0"
   },
   "devDependencies": {
     "@serverless/typescript": "^3.0.0",

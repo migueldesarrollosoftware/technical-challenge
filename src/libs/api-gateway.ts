@@ -4,6 +4,7 @@ import type {
   Handler,
 } from "aws-lambda";
 import type { FromSchema } from "json-schema-to-ts";
+import { httpStatus } from "./utils/enums/http-status.enum";
 
 type ValidatedAPIGatewayProxyEvent<S> = Omit<APIGatewayProxyEvent, "body"> & {
   body: FromSchema<S>;
@@ -13,16 +14,12 @@ export type ValidatedEventAPIGatewayProxyEvent<S> = Handler<
   APIGatewayProxyResult
 >;
 
-export const formatJSONResponse = (response: Record<string, unknown>) => {
+export const formatJSONResponse = (
+  status: httpStatus,
+  response: Record<string, unknown>
+) => {
   return {
-    statusCode: 200,
+    statusCode: Number(status),
     body: JSON.stringify(response),
   };
 };
-
-export const formatJSONException = (errorMessage: string) => {
-  return {
-    statusCode: 500,
-    error: JSON.stringify(errorMessage),
-  };
-}; 
