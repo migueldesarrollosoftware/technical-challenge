@@ -1,3 +1,50 @@
+# INSTALACION Y EJECUCION DE PROYECTO EN LOCAL
+
+Puedes ejecutar localmente utilizando Docker y sin Docker.
+
+## EJECUCION  CON DOCKER
+
+### Requisito
+- Instalar Docker
+
+Pasos:
+
+1. Posiciónese en la ubicación del proyecto en su terminal donde se encuentra el Dockerfile.
+2. Ejecute el siguiente comando para construir la imagen del contenedor:
+	 >docker build -t serverless-project .
+
+3. Ejecute el siguiente comando para correr el contenedor:
+   	>docker run -p 4000:4000 serverless-project
+
+4. El proyecto Serverless estará ahora en ejecución en el puerto 4000. 
+Puede acceder a él a través de su navegador web utilizando la siguiente URL: http://localhost:4000
+
+- Nota: Si utiliza wsl2 probablemente deba hacer otra configuracion para acceder al recurso usando la ip del contenedor.
+
+## EJECUCION  SIN DOCKER
+
+### Requisitos
+Antes de ejecutar el comando `npm run dev', asegúrese de tener los siguientes requisitos previos en su entorno:
+
+- Node.js (versión 10 o superior)
+- NPM (Node Package Manager)
+- Debe tener instalado AWS-CLI
+- Credenciales de AWS de un usuario IAM con los permisos necesarios (Credenciales estan en `migue_developer_accessKeys.csv` esto se encuentra en la raiz del proyecto)
+- hacer `aws configure` y agregar las credenciales suministradas en `migue_developer_accessKeys.csv`
+
+Pasos:
+
+1. Abra una terminal y navegue hasta la ubicación del proyecto Serverless.
+
+2. Ejecute el siguiente comando para instalar las dependencias del proyecto:
+   	>npm install
+
+3. Ejecute el siguiente comando para iniciar el proyecto Serverless en modo offline:
+	> npm run dev (opcion 1)
+	>serverless offline start (opcion 2)
+
+4. El proyecto estara en ejecucion en http://localhost:4000
+
 # PROBAR APIs CON THUNDER CLIENT
 
 - Adjunté en la raiz del proyecto un archivo json denominado `api-test.thunder-client.json` contiene las pruebas de las endpoints.
