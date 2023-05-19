@@ -69,9 +69,9 @@ Retrieve information about the billboard.
   - Body: JSON object containing the details of the billboard.
 
 ---
+
 To test the API locally using `serverless offline`, use the following base URL: `http://localhost:4000`.
 
 For the deployed API on AWS, use the following base URL: `https://xx97tlitsf.execute-api.us-east-1.amazonaws.com`.
-
 
 - created by: `miguel ramirez`

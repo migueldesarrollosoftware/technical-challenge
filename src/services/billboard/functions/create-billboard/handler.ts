@@ -16,7 +16,7 @@ const createBillboard: ValidatedEventAPIGatewayProxyEvent<
   typeof schema
 > = async (event): Promise<APIGatewayProxyResult> => {
   try {
-    const { description, name} = event?.body as unknown as ICreateBillboard;
+    const { description, name } = event?.body as unknown as ICreateBillboard;
     const billboardWithUuid = { description, name, id: uuidv4() };
     // create documentClient
     const createBillboardParams: DynamoDB.DocumentClient.PutItemInput = {
