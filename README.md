@@ -124,4 +124,9 @@ Para probar las apis usando `serverless offline`, use la siguiente base URL: `ht
 
 para probar la API sobre AWS,use la siguiente base URL: `https://xx97tlitsf.execute-api.us-east-1.amazonaws.com`.
 
+# PROBAR APIs CON THUNDER CLIENT
+
+- Adjunte en la raiz del proyecto un archivo json denominado `api-test.thunder-client.json` contiene las pruebas de las endpoints
+- Agregue la extension thunder client en VScode y puede importar este json para tener las pruebas listar para usar
+
 - created by: `miguel ramirez`
